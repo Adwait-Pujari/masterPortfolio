@@ -25,12 +25,20 @@ class CompetitiveSites extends React.Component {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span
-                      className="iconify"
-                      data-icon={logo.iconifyClassname}
-                      style={logo.style}
-                      data-inline="false"
-                    ></span>
+                    {logo.imageName ? (
+                      <img
+                        src={require(`../../assets/images/${logo.imageName}.svg`)}
+                        alt={`${logo.siteName} Logo`}
+                        style={{ width: 48, height: 48 }}
+                      />
+                    ) : (
+                      <span
+                        className="iconify"
+                        data-icon={logo.iconifyClassname}
+                        style={logo.style}
+                        data-inline="false"
+                      ></span>
+                    )}
                   </a>
                 </li>
               </OverlayTrigger>
